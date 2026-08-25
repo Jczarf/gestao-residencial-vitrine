@@ -4,15 +4,33 @@
 
 # Sistema de Gestão Residencial — Vitrine Técnica
 
-Aplicação full-stack desenvolvida para centralizar rotinas de **imóveis, locatários, contratos, cobranças, pagamentos, recibos e privacidade** em uma única plataforma.
+Protótipo full-stack **em desenvolvimento** para centralizar rotinas de imóveis, locatários, contratos, cobranças, pagamentos, recibos e privacidade.
 
-> **Este repositório é uma vitrine de portfólio.** O código-fonte completo permanece privado. Aqui são publicados arquitetura, decisões técnicas, fluxos, segurança e representações visuais sanitizadas — sem credenciais, dados reais ou detalhes operacionais sensíveis.
+> **Vitrine de portfólio:** o código-fonte completo permanece privado. Esta documentação mostra arquitetura, decisões e partes já trabalhadas, mas **não significa que todos os módulos estejam concluídos, integrados ou prontos para produção**.
+
+## Estado do projeto
+
+| Área | Estado |
+|---|---|
+| Backend Express + TypeScript | ✅ Evidência no código privado |
+| Prisma + PostgreSQL | ✅ Schema e modelagem presentes |
+| Docker para banco/backend/frontend | ✅ Estrutura presente |
+| Autenticação e autorização | 🧪 Implementadas parcialmente / em revisão |
+| Painel administrativo e portal do locatário | 🧪 Em desenvolvimento e validação |
+| Contratos, cobranças e regras financeiras | 🧪 Implementação relevante, sem conclusão end-to-end afirmada |
+| PIX / webhooks / pagamentos | 🧪 Trabalhados, mas ainda não aprovados para operação financeira real |
+| Recibos, auditoria, privacidade e PWA | 🧪 Presentes em diferentes estágios |
+| Testes backend e Playwright | 🧪 Existem, mas uma baseline recente completa ainda precisa ser verificada |
+| Deploy de produção | 📋 Não apresentado como concluído |
+| Segurança para operação real | 📋 Pendências precisam ser resolvidas e verificadas |
+
+Detalhamento: [`docs/ESTADO-DO-PROJETO.md`](docs/ESTADO-DO-PROJETO.md).
 
 ## Visão do produto
 
-Rotinas de locação frequentemente ficam espalhadas entre planilhas, mensagens, contratos, comprovantes e controles manuais. O projeto foi criado para reunir essas operações e manter rastreabilidade sobre o ciclo completo da locação.
+Rotinas de locação frequentemente ficam espalhadas entre planilhas, mensagens, contratos, comprovantes e controles manuais. O projeto foi iniciado para experimentar a centralização dessas operações e a rastreabilidade do ciclo da locação.
 
-### Principais áreas
+### Áreas trabalhadas no projeto
 
 - gestão de imóveis;
 - cadastro e gestão de locatários;
@@ -28,11 +46,13 @@ Rotinas de locação frequentemente ficam espalhadas entre planilhas, mensagens,
 - solicitações relacionadas a dados pessoais;
 - experiência responsiva/PWA.
 
+> A lista representa **escopo desenvolvido ou explorado**, e não uma declaração de que cada item esteja finalizado.
+
 ## Stack
 
 `Next.js` · `React` · `TypeScript` · `Node.js` · `Express` · `Prisma` · `PostgreSQL` · `Docker` · `JWT` · `bcrypt` · `Jest` · `Supertest` · `Playwright`
 
-O backend também utiliza camadas como `Helmet`, CORS configurável, rate limiting, CSRF e validação de requisições.
+O backend também possui camadas como `Helmet`, CORS configurável, rate limiting, CSRF e validação de requisições.
 
 ## Arquitetura
 
@@ -63,7 +83,7 @@ Prisma ORM
 PostgreSQL
 ```
 
-Detalhamento em [`docs/ARQUITETURA.md`](docs/ARQUITETURA.md).
+O diagrama representa a arquitetura pretendida e as camadas já trabalhadas; não implica que todos os fluxos estejam completos. Veja [`docs/ARQUITETURA.md`](docs/ARQUITETURA.md).
 
 ## Interface
 
@@ -71,7 +91,7 @@ Detalhamento em [`docs/ARQUITETURA.md`](docs/ARQUITETURA.md).
   <img src="assets/painel-conceitual.svg" alt="Mockup conceitual do painel administrativo" width="100%">
 </p>
 
-> O painel acima é um **mockup conceitual criado para o portfólio**. Os números, competências e valores são fictícios e não representam dados de usuários reais.
+> O painel acima é um **mockup conceitual de portfólio**. Os números, competências e valores são fictícios e não representam uma tela de produção nem dados de usuários reais.
 
 ## Fluxo financeiro
 
@@ -79,13 +99,13 @@ Detalhamento em [`docs/ARQUITETURA.md`](docs/ARQUITETURA.md).
   <img src="assets/fluxo-cobranca.svg" alt="Fluxo conceitual de cobrança e conciliação" width="100%">
 </p>
 
-Uma decisão importante foi separar **cobrança** de **transação de pagamento**. A aplicação não trata uma notificação do navegador como fonte de verdade financeira: o backend precisa validar o estado da transação antes de refletir a alteração na cobrança.
+Uma decisão de modelagem foi separar **cobrança** de **transação de pagamento**, deixando a validação financeira sob responsabilidade do backend. Esse desenho está implementado em partes do projeto, mas o fluxo financeiro completo permanece sujeito a revisão e testes antes de qualquer uso real.
 
 Mais detalhes em [`docs/FLUXOS.md`](docs/FLUXOS.md).
 
 ## Modelagem
 
-O domínio privado possui entidades específicas para representar, entre outros conceitos:
+O domínio privado possui entidades para representar, entre outros conceitos:
 
 ```text
 Locatário ── Contrato ── Imóvel
@@ -99,7 +119,7 @@ Solicitações de privacidade
 Configurações do sistema
 ```
 
-A modelagem utiliza PostgreSQL e Prisma para manter relações explícitas entre contratos, cobranças, transações e registros de auditoria.
+A modelagem utiliza PostgreSQL e Prisma para relações entre contratos, cobranças, transações e registros de auditoria.
 
 ## Segurança
 
@@ -115,32 +135,27 @@ Entre os controles presentes ou trabalhados no projeto estão:
 - proteção CSRF;
 - limite de payload;
 - tratamento central de erros;
-- segredos exclusivamente por configuração de ambiente;
+- segredos por configuração de ambiente;
 - trilha de auditoria;
 - validação adicional de eventos financeiros.
 
-**Importante:** a existência desses controles não significa que o sistema está certificado ou pronto para produção. A revisão de segurança identificou pontos que precisam ser resolvidos e verificados antes de um ambiente real.
-
-> **Status de segurança: em revisão. Não apresentado como production-ready.**
+**A existência desses controles não significa que o sistema esteja seguro para produção.** A revisão técnica identificou pontos que ainda precisam ser corrigidos e verificados.
 
 Leia [`docs/SEGURANCA.md`](docs/SEGURANCA.md).
 
 ## Privacidade
 
-A modelagem busca aplicar minimização de dados quando possível. A vitrine, por sua vez, não contém documentos, dumps de banco, contratos, recibos, telefones, CPFs, endereços ou informações reais de locatários.
+A modelagem busca aplicar minimização de dados em partes do domínio. A vitrine não contém documentos, dumps de banco, contratos, recibos, telefones, CPFs, endereços ou dados reais de locatários.
 
-A aplicação também prevê fluxo técnico para solicitações relacionadas a exportação/exclusão de dados. Isso é parte da engenharia de privacidade, mas **não é uma declaração automática de conformidade jurídica integral com a LGPD**.
+Há estruturas para solicitações relacionadas a dados, mas isso **não representa declaração de conformidade integral com a LGPD**.
 
 Leia [`docs/PRIVACIDADE.md`](docs/PRIVACIDADE.md).
 
 ## Testes
 
-O projeto privado utiliza:
+O projeto privado inclui Jest + Supertest no backend e Playwright no frontend. Há cenários voltados a autenticação, autorização, contratos, regras financeiras, webhooks e recibos.
 
-- **Jest + Supertest** no backend;
-- **Playwright** para fluxos end-to-end do frontend.
-
-Os cenários mais importantes envolvem autenticação, autorização, contratos, regras financeiras, webhooks, recibos e isolamento dos dados de cada locatário.
+Entretanto, esta vitrine **não afirma que toda a suíte atual esteja passando** até que uma execução recente e reproduzível seja verificada.
 
 Leia [`docs/TESTES.md`](docs/TESTES.md).
 
@@ -167,15 +182,15 @@ A justificativa e os trade-offs estão em [`docs/DECISOES-TECNICAS.md`](docs/DEC
 
 ## IA aplicada ao desenvolvimento
 
-Agentes e modelos de linguagem foram utilizados como apoio em diferentes fases do projeto, incluindo planejamento, implementação, refatoração, testes, revisão, documentação e investigação de falhas.
+Agentes e modelos de linguagem foram utilizados como apoio em planejamento, implementação, refatoração, testes, revisão, documentação e investigação de falhas.
 
-O princípio adotado é simples: **saída de IA é proposta, não aprovação automática**. Mudanças relacionadas a autenticação, pagamentos, dados pessoais e infraestrutura exigem validação adicional antes de serem incorporadas.
+Saída de IA é tratada como proposta, não como aprovação automática. Isso é especialmente importante em autenticação, pagamentos, dados pessoais e infraestrutura.
 
 ## O que esta vitrine demonstra
 
-Este repositório foi estruturado para demonstrar competências de engenharia sem precisar abrir todo o produto:
+O objetivo não é provar um produto finalizado, e sim mostrar experiência prática com:
 
-- desenho de arquitetura full-stack;
+- arquitetura full-stack;
 - modelagem relacional;
 - APIs e regras de negócio;
 - segurança aplicada ao desenvolvimento;
@@ -183,31 +198,28 @@ Este repositório foi estruturado para demonstrar competências de engenharia se
 - Docker e organização de ambiente;
 - estratégia de testes;
 - documentação técnica;
-- capacidade de revisar criticamente um sistema antes de colocá-lo em produção.
+- revisão crítica de um sistema incompleto antes de produção.
 
 ## Documentação
 
 | Documento | Conteúdo |
 |---|---|
+| [`ESTADO-DO-PROJETO.md`](docs/ESTADO-DO-PROJETO.md) | implementado, parcial e pendente |
 | [`ARQUITETURA.md`](docs/ARQUITETURA.md) | camadas e responsabilidades |
 | [`FLUXOS.md`](docs/FLUXOS.md) | fluxos administrativo, locatário e financeiro |
 | [`SEGURANCA.md`](docs/SEGURANCA.md) | controles, riscos e limites |
 | [`PRIVACIDADE.md`](docs/PRIVACIDADE.md) | dados pessoais e publicação segura |
 | [`TESTES.md`](docs/TESTES.md) | estratégia e cenários prioritários |
 | [`DECISOES-TECNICAS.md`](docs/DECISOES-TECNICAS.md) | decisões e trade-offs |
-| [`PUBLICACAO.md`](docs/PUBLICACAO.md) | checklist para tornar a vitrine pública |
+| [`PUBLICACAO.md`](docs/PUBLICACAO.md) | checklist para publicação |
 
 ## Código-fonte
 
-O código integral do produto **não é distribuído neste repositório**. O objetivo é permitir avaliação técnica do projeto sem entregar a implementação completa nem expor dados e configurações privadas.
-
-Consulte [`LICENSE`](LICENSE) para os termos desta vitrine.
+O código integral do produto **não é distribuído neste repositório**. O objetivo é permitir avaliação técnica sem entregar a implementação completa nem expor dados e configurações privadas.
 
 ## Status
 
-**Em desenvolvimento e revisão técnica.**
-
-O projeto é apresentado como trabalho de engenharia em evolução, não como sistema certificado ou pronto para operação financeira real.
+**Protótipo avançado em desenvolvimento e revisão técnica.** Há módulos relevantes implementados, mas o sistema não é apresentado como concluído, certificado ou pronto para operação financeira real.
 
 ## Autor
 
