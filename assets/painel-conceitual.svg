@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="t d">
+  <title id="t">Painel administrativo conceitual do sistema residencial</title>
+  <desc id="d">Mockup conceitual sem dados reais, criado apenas para apresentação do portfólio.</desc>
+  <rect width="1200" height="720" rx="24" fill="#eef2f7"/>
+  <rect x="30" y="30" width="1140" height="660" rx="20" fill="#ffffff" stroke="#dbe3ee"/>
+  <rect x="30" y="30" width="240" height="660" rx="20" fill="#0f172a"/>
+  <rect x="250" y="30" width="20" height="660" fill="#0f172a"/>
+
+  <g font-family="Inter,Segoe UI,Arial">
+    <text x="70" y="86" fill="#f8fafc" font-size="24" font-weight="700">Gestão Residencial</text>
+    <text x="70" y="114" fill="#94a3b8" font-size="13">PAINEL ADMINISTRATIVO</text>
+
+    <g fill="#cbd5e1" font-size="15">
+      <text x="72" y="180">▣ Visão geral</text>
+      <text x="72" y="226">⌂ Imóveis</text>
+      <text x="72" y="272">◎ Locatários</text>
+      <text x="72" y="318">▤ Contratos</text>
+      <text x="72" y="364">$ Financeiro</text>
+      <text x="72" y="410">▧ Recibos</text>
+      <text x="72" y="456">◇ Auditoria</text>
+      <text x="72" y="502">⚙ Configurações</text>
+    </g>
+
+    <text x="310" y="86" fill="#0f172a" font-size="30" font-weight="700">Visão geral</text>
+    <text x="310" y="116" fill="#64748b" font-size="15">Mockup conceitual — nenhum dado exibido é real.</text>
+
+    <g>
+      <rect x="310" y="150" width="240" height="115" rx="16" fill="#f8fafc" stroke="#e2e8f0"/>
+      <text x="336" y="183" fill="#64748b" font-size="14">IMÓVEIS ATIVOS</text>
+      <text x="336" y="230" fill="#0f172a" font-size="34" font-weight="700">12</text>
+      <circle cx="508" cy="208" r="24" fill="#ccfbf1"/>
+      <path d="M496 210 508 198l12 12v14h-9v-9h-6v9h-9Z" fill="#0f766e"/>
+
+      <rect x="575" y="150" width="240" height="115" rx="16" fill="#f8fafc" stroke="#e2e8f0"/>
+      <text x="601" y="183" fill="#64748b" font-size="14">CONTRATOS ATIVOS</text>
+      <text x="601" y="230" fill="#0f172a" font-size="34" font-weight="700">9</text>
+      <circle cx="773" cy="208" r="24" fill="#dbeafe"/>
+      <path d="M763 196h20v24h-20zM767 202h12M767 208h12M767 214h8" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+
+      <rect x="840" y="150" width="280" height="115" rx="16" fill="#f8fafc" stroke="#e2e8f0"/>
+      <text x="866" y="183" fill="#64748b" font-size="14">PENDÊNCIAS DO MÊS</text>
+      <text x="866" y="230" fill="#0f172a" font-size="34" font-weight="700">3</text>
+      <rect x="1025" y="192" width="62" height="28" rx="14" fill="#fef3c7"/>
+      <text x="1056" y="211" text-anchor="middle" fill="#92400e" font-size="12">atenção</text>
+    </g>
+
+    <rect x="310" y="295" width="510" height="330" rx="18" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="338" y="335" fill="#0f172a" font-size="19" font-weight="700">Cobranças recentes</text>
+    <text x="338" y="362" fill="#64748b" font-size="13">Resumo operacional</text>
+    <line x1="338" y1="390" x2="790" y2="390" stroke="#e2e8f0"/>
+    <g font-size="13">
+      <text x="338" y="420" fill="#64748b">Competência</text><text x="480" y="420" fill="#64748b">Tipo</text><text x="610" y="420" fill="#64748b">Status</text><text x="725" y="420" fill="#64748b">Valor</text>
+      <text x="338" y="463" fill="#334155">2026-08</text><text x="480" y="463" fill="#334155">Aluguel</text><text x="610" y="463" fill="#15803d">Pago</text><text x="725" y="463" fill="#334155">R$ —</text>
+      <text x="338" y="508" fill="#334155">2026-08</text><text x="480" y="508" fill="#334155">Água</text><text x="610" y="508" fill="#b45309">Pendente</text><text x="725" y="508" fill="#334155">R$ —</text>
+      <text x="338" y="553" fill="#334155">2026-07</text><text x="480" y="553" fill="#334155">Aluguel</text><text x="610" y="553" fill="#15803d">Pago</text><text x="725" y="553" fill="#334155">R$ —</text>
+    </g>
+
+    <rect x="845" y="295" width="275" height="330" rx="18" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="872" y="335" fill="#0f172a" font-size="19" font-weight="700">Ações rápidas</text>
+    <rect x="872" y="372" width="220" height="48" rx="12" fill="#0f766e"/>
+    <text x="982" y="402" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700">Nova cobrança</text>
+    <rect x="872" y="438" width="220" height="48" rx="12" fill="#eff6ff" stroke="#bfdbfe"/>
+    <text x="982" y="468" text-anchor="middle" fill="#1d4ed8" font-size="14" font-weight="700">Novo contrato</text>
+    <rect x="872" y="504" width="220" height="48" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="982" y="534" text-anchor="middle" fill="#334155" font-size="14" font-weight="700">Gerar recibo</text>
+    <text x="872" y="589" fill="#94a3b8" font-size="12">Interface ilustrativa para portfólio.</text>
+  </g>
+</svg>
