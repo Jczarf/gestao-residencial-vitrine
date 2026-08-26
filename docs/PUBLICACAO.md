@@ -12,11 +12,16 @@ A vitrine foi criada para poder ser tornada pública sem expor o código-fonte c
 - [x] documentação de privacidade
 - [x] licença restritiva
 - [x] nenhum `.env`, dump, backup ou documento real
+- [x] scanner dedicado `detect-secrets` configurado para árvore e histórico alcançável
+- [ ] confirmar execução verde do workflow `Security Audit`
 - [ ] revisão manual final no GitHub
-- [ ] confirmar que nenhum commit contém dados sensíveis
 - [ ] configurar descrição e tópicos do repositório
 - [ ] tornar o repositório público
 - [ ] fixar no perfil somente depois da revisão final
+
+## Auditoria automática
+
+O workflow `.github/workflows/security-audit.yml` faz checkout com histórico completo, instala uma versão fixada do `detect-secrets` e verifica tanto os arquivos atuais quanto conteúdo e nomes de arquivos alcançáveis no histórico Git. Um resultado verde reduz o risco de publicação acidental de credenciais, mas não substitui revisão manual nem revogação de qualquer segredo que tenha sido exposto fora desta vitrine.
 
 ## Descrição sugerida
 
