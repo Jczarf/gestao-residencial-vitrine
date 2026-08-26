@@ -4,40 +4,56 @@ Esta vitrine descreve um sistema **em desenvolvimento**. Ela não deve ser inter
 
 ## Legenda
 
-- ✅ **Evidência no código** — existe implementação correspondente no repositório privado.
+- ✅ **Implementado e verificado no escopo indicado** — há código correspondente e uma validação recente reproduzível para aquela camada.
 - 🧪 **Parcial / em validação** — há código, fluxo ou documentação, mas a conclusão end-to-end não foi confirmada.
-- 📋 **Planejado / não validado** — faz parte do desenho do produto, da documentação ou de uma etapa ainda pendente.
+- 📋 **Planejado / não validado para produção** — faz parte do desenho do produto ou depende de validação ainda pendente.
 
 ## Estado por área
 
 | Área | Estado | Observação |
 |---|---|---|
-| Backend Express + TypeScript | ✅ | Estrutura, rotas e middlewares existem no projeto privado. |
-| Prisma + PostgreSQL | ✅ | Schema relacional existe e representa o domínio principal. |
-| Docker para banco/backend/frontend | ✅ | Há configuração de ambiente containerizado. |
-| Autenticação/autorização | 🧪 | Há implementação, mas deve ser tratada como em revisão até validação completa dos fluxos. |
-| Painel administrativo | 🧪 | Há desenvolvimento de interface e rotas, sem afirmar cobertura funcional total. |
-| Portal do locatário | 🧪 | Presente no escopo e em implementação; não apresentado como fluxo finalizado. |
+| Backend Express + TypeScript | ✅ | `npm ci` e `npm run build` concluíram com sucesso no CI em 26/08/2026. |
+| Suíte Jest do backend | ✅ | A suíte atualmente descoberta pelo Jest concluiu com sucesso no mesmo CI. Isso não equivale a validar todos os fluxos do produto. |
+| Frontend Next.js | ✅ | `npm ci`, lint e build de produção concluíram com sucesso no CI. |
+| Prisma + PostgreSQL | ✅ | Schema relacional existe e representa o domínio principal; a baseline de CI atual não executa um teste completo de migrations contra banco limpo. |
+| Docker para banco/backend/frontend | 🧪 | Há configuração containerizada, mas o Compose completo ainda não foi validado nesta baseline. |
+| Autenticação/autorização | 🧪 | Há implementação e testes associados, mas ainda requer validação integrada de sessões, papéis e cenários adversariais. |
+| Painel administrativo | 🧪 | Interface e rotas existem; o CI confirma que o frontend compila, não que todos os fluxos de usuário funcionem ponta a ponta. |
+| Portal do locatário | 🧪 | Presente no desenvolvimento; não apresentado como fluxo integralmente concluído. |
 | Contratos e cobranças | 🧪 | Modelagem e regras existem, mas o conjunto completo de cenários precisa de validação integrada. |
-| PIX / integração financeira | 🧪 | Integração trabalhada; operações financeiras reais permanecem bloqueadas como critério de produção até revisão completa. |
-| Recibos em PDF | 🧪 | Funcionalidade presente no projeto, ainda tratada como parte do protótipo. |
+| PIX / integração financeira | 🧪 | Integração trabalhada; o CI não executa transações reais nem valida webhooks contra o provedor. |
+| Recibos em PDF | 🧪 | Funcionalidade presente no protótipo, sem validação end-to-end nesta baseline. |
 | Auditoria e solicitações de privacidade | 🧪 | Estruturas existem; não equivalem a conformidade jurídica integral. |
-| PWA | 🧪 | Há trabalho nessa direção, mas não é apresentado como experiência concluída em todos os dispositivos. |
-| Testes backend / autorização | 🧪 | Existem testes, porém esta vitrine não afirma que toda a suíte atual esteja verde sem execução recente verificada. |
-| Playwright / E2E | 🧪 | Ferramenta presente; cobertura completa dos fluxos não é afirmada. |
+| PWA | 🧪 | Há implementação relacionada, mas não foi validada em matriz de dispositivos/navegadores. |
+| Playwright / E2E | 🧪 | Playwright está configurado, porém não foi executado pela baseline de CI de 26/08/2026. |
 | Deploy de produção | 📋 | Não é apresentado como concluído ou aprovado. |
-| Segurança para operação financeira real | 📋 | Há revisão e controles, mas ainda existem itens que precisam ser resolvidos/verificados antes de produção. |
+| Segurança para operação financeira real | 📋 | Há controles e revisão, mas ainda existem itens que precisam ser resolvidos/verificados antes de produção. |
 | Conformidade LGPD integral | 📋 | Não reivindicada. Exigiria análise jurídica e operacional além do código. |
+
+## Evidência automatizada mais recente
+
+Em **26/08/2026**, o workflow `CI` do repositório privado concluiu com sucesso no commit `0352694d9e8193f4e0ff777c1d38891d34d6851f`.
+
+A execução verificou:
+
+- instalação reprodutível das dependências do backend;
+- compilação TypeScript do backend;
+- suíte Jest atualmente configurada;
+- instalação reprodutível das dependências do frontend;
+- lint do frontend;
+- build de produção do Next.js.
+
+Essa evidência aumenta a confiança de que **as duas camadas compilam e a suíte atual passa**, mas não valida automaticamente banco/migrations, Playwright, pagamentos reais, webhooks, Docker Compose completo, segurança de produção ou conformidade legal.
 
 ## Inconsistência histórica de documentação
 
-O projeto privado possui registros de desenvolvimento que chegaram a usar expressões como “pronto para produção”, enquanto outras partes da própria documentação ainda indicavam itens incompletos. Por isso, esta vitrine adota uma regra mais conservadora: **nenhuma funcionalidade é tratada como concluída apenas porque um log antigo a chamou de concluída**.
+O projeto privado possui registros antigos que chegaram a usar expressões como “pronto para produção”. A auditoria atual adota uma regra mais rigorosa: **o status é determinado por evidência reproduzível, não por uma frase de um log antigo**.
 
 ## Como descrever em portfólio
 
 Formulação recomendada:
 
-> Protótipo full-stack avançado de gestão residencial, em desenvolvimento, usado para praticar modelagem relacional, autenticação, regras financeiras, integrações, Docker, testes e revisão de segurança.
+> Protótipo full-stack avançado de gestão residencial, em desenvolvimento. A baseline atual confirma build do backend, suíte Jest, lint e build do frontend; fluxos financeiros, E2E e requisitos de produção continuam em validação.
 
 Evite dizer:
 
@@ -45,14 +61,13 @@ Evite dizer:
 - “plataforma financeira segura”;
 - “LGPD compliant”;
 - “todos os fluxos estão concluídos”; ou
-- “testes 100% aprovados” sem uma execução recente verificável.
+- que CI verde significa validação end-to-end do sistema.
 
 ## Próximos passos
 
-- reconciliar documentação antiga com o estado atual do código;
-- executar e registrar uma baseline reproduzível de testes;
-- concluir validação de autenticação, autorização e sessões;
+- validar migrations e setup do PostgreSQL a partir de ambiente limpo;
+- executar Playwright para os fluxos prioritários;
+- aprofundar testes de autenticação, autorização e sessões;
 - fechar pendências de pagamentos/webhooks e operações financeiras;
-- validar migrations e setup do banco a partir de ambiente limpo;
-- revisar fluxos E2E prioritários;
+- validar Docker Compose de ponta a ponta;
 - somente depois avaliar qualquer deploy com dados ou pagamentos reais.
