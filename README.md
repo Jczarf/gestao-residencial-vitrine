@@ -4,6 +4,7 @@
 
 Sistema web de gestão residencial criado para centralizar **imóveis, locatários, contratos, cobranças, pagamentos e recibos** em uma única plataforma.
 
+[![Security Audit](https://github.com/Jczarf/gestao-residencial-vitrine/actions/workflows/security-audit.yml/badge.svg)](https://github.com/Jczarf/gestao-residencial-vitrine/actions/workflows/security-audit.yml)
 ![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=000000)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
@@ -15,6 +16,25 @@ Sistema web de gestão residencial criado para centralizar **imóveis, locatári
 
 > **Projeto comercial proprietário.** Este repositório existe somente como vitrine de portfólio. Código-fonte, infraestrutura, configurações, credenciais e dados operacionais permanecem privados.
 
+## Interface
+
+A aplicação possui painel administrativo e portal dedicado ao locatário, com interface responsiva e identidade visual própria.
+
+<p align="center">
+  <img src="assets/dashboard-administrativo.webp" alt="Dashboard administrativo do Residencial Rosileide" width="100%" />
+</p>
+
+<details>
+<summary><strong>Ver portais de acesso</strong></summary>
+<br />
+<p align="center">
+  <img src="assets/portal-locatario.webp" alt="Portal do locatário do Residencial Rosileide" width="49%" />
+  <img src="assets/portal-administracao.webp" alt="Acesso administrativo do Residencial Rosileide" width="49%" />
+</p>
+</details>
+
+> As capturas são da interface real do projeto. Apenas informações identificáveis de locatários foram censuradas.
+
 ## Visão geral
 
 | Área | Implementação |
@@ -24,7 +44,7 @@ Sistema web de gestão residencial criado para centralizar **imóveis, locatári
 | Frontend | Next.js, React e TypeScript |
 | Backend | Node.js, Express e TypeScript |
 | Dados | PostgreSQL com Prisma ORM |
-| Operação | containers Docker e ambiente de produção separado da vitrine |
+| Operação | containers Docker e ambiente real separado desta vitrine |
 
 ## Funcionalidades
 
@@ -36,12 +56,6 @@ Sistema web de gestão residencial criado para centralizar **imóveis, locatári
 - painel administrativo;
 - portal dedicado ao locatário;
 - interface responsiva para desktop e dispositivos móveis.
-
-## Interface
-
-As capturas publicadas nesta vitrine são retiradas da **interface real do projeto** e devem ser sanitizadas antes da publicação para não expor dados de locatários, valores sensíveis, credenciais ou informações administrativas.
-
-> Screenshots conceituais não são usados como evidência do produto. A apresentação visual deve refletir o sistema real.
 
 ## Stack
 
