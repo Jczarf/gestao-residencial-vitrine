@@ -2,49 +2,26 @@
 
 # Residencial Rosileide
 
-Sistema web de gestão residencial criado para centralizar **imóveis, locatários, contratos, cobranças, pagamentos e recibos** em uma única plataforma.
+Sistema web de gestão residencial para centralizar **imóveis, locatários, contratos, cobranças, pagamentos e recibos**.
 
-[![Security Audit](https://github.com/Jczarf/gestao-residencial-vitrine/actions/workflows/security-audit.yml/badge.svg)](https://github.com/Jczarf/gestao-residencial-vitrine/actions/workflows/security-audit.yml)
 ![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=000000)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-database-4169E1?logo=postgresql&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-deploy-2496ED?logo=docker&logoColor=white)
-![Source](https://img.shields.io/badge/source-private-14233A)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![Source](https://img.shields.io/badge/código-privado-14233A)
 
 </div>
-
-> **Projeto comercial proprietário.** Este repositório existe somente como vitrine de portfólio. Código-fonte, infraestrutura, configurações, credenciais e dados operacionais permanecem privados.
-
-## Interface
-
-A aplicação possui painel administrativo e portal dedicado ao locatário, com interface responsiva e identidade visual própria.
 
 <p align="center">
   <img src="assets/dashboard-administrativo.webp" alt="Dashboard administrativo do Residencial Rosileide" width="100%" />
 </p>
 
-<details>
-<summary><strong>Ver portais de acesso</strong></summary>
-<br />
-<p align="center">
-  <img src="assets/portal-locatario.webp" alt="Portal do locatário do Residencial Rosileide" width="49%" />
-  <img src="assets/portal-administracao.webp" alt="Acesso administrativo do Residencial Rosileide" width="49%" />
-</p>
-</details>
+## Sobre o projeto
 
-> As capturas são da interface real do projeto. Apenas informações identificáveis de locatários foram censuradas.
+O **Residencial Rosileide** é um projeto comercial desenvolvido para organizar rotinas de administração residencial em uma única aplicação, reunindo informações de imóveis, locatários, contratos e movimentações financeiras.
 
-## Visão geral
-
-| Área | Implementação |
-| --- | --- |
-| Produto | gestão de imóveis, locatários, contratos e cobranças |
-| Interface | aplicação web responsiva com painel administrativo e portal do locatário |
-| Frontend | Next.js, React e TypeScript |
-| Backend | Node.js, Express e TypeScript |
-| Dados | PostgreSQL com Prisma ORM |
-| Operação | containers Docker e ambiente real separado desta vitrine |
+A aplicação possui áreas distintas para administração e locatários, com interface responsiva para uso em desktop e dispositivos móveis.
 
 ## Funcionalidades
 
@@ -55,7 +32,22 @@ A aplicação possui painel administrativo e portal dedicado ao locatário, com 
 - geração de recibos em PDF;
 - painel administrativo;
 - portal dedicado ao locatário;
-- interface responsiva para desktop e dispositivos móveis.
+- acompanhamento de recebimentos e pendências.
+
+## Interface
+
+<details>
+<summary><strong>Ver outras telas</strong></summary>
+<br />
+<p align="center">
+  <img src="assets/portal-locatario.webp" alt="Portal do locatário do Residencial Rosileide" width="100%" />
+</p>
+<p align="center">
+  <img src="assets/portal-administracao.webp" alt="Acesso administrativo do Residencial Rosileide" width="100%" />
+</p>
+</details>
+
+> As imagens mostram a interface real do projeto. Informações identificáveis de locatários foram ocultadas antes da publicação.
 
 ## Stack
 
@@ -63,13 +55,7 @@ A aplicação possui painel administrativo e portal dedicado ao locatário, com 
 
 ## Código-fonte
 
-O código integral do Residencial Rosileide é **privado e proprietário**. Esta vitrine não distribui implementação, arquitetura interna detalhada, banco de dados, configurações de infraestrutura ou integrações sensíveis.
-
-O objetivo é apresentar o produto e o trabalho de desenvolvimento sem abrir o ativo comercial.
-
-## Status
-
-**Projeto comercial em desenvolvimento contínuo, com ambiente real mantido separadamente deste repositório de portfólio.**
+Este repositório apresenta apenas o projeto e sua interface. O código-fonte do sistema comercial permanece **privado**.
 
 ## Autor
 
