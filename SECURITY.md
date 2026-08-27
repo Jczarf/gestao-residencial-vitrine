@@ -1,7 +1,9 @@
-# Política de segurança
+# Segurança
 
-Este repositório é uma vitrine técnica e não contém a aplicação completa nem dados reais.
+Este repositório é uma **vitrine pública de portfólio** do Residencial Rosileide e não distribui o código-fonte completo da aplicação, credenciais, segredos, configurações de infraestrutura ou dados pessoais identificáveis de locatários.
 
-Se você identificar exposição acidental de informação sensível, credencial, dado pessoal ou detalhe operacional, não abra uma issue pública com o conteúdo exposto. Entre em contato de forma privada pelo perfil do autor.
+As capturas publicadas representam a interface real do produto. Informações identificáveis de locatários são censuradas antes da publicação.
 
-A aplicação original permanece em repositório privado e passa por revisão separada de segurança. Esta vitrine não deve ser interpretada como certificação de segurança ou declaração de prontidão para produção.
+Se você identificar exposição acidental de credencial, dado pessoal ou informação operacional sensível neste repositório, não publique o conteúdo em uma issue. Entre em contato de forma privada pelo perfil do autor.
+
+A aplicação comercial e seu ambiente real permanecem separados desta vitrine.
